@@ -1,0 +1,24 @@
+
+import "sockaddr"
+import "strings"
+
+restricted_cidrs = [ "127.0.0.1/32" ]
+
+print("Requester:", request.connection.remote_addr)
+print("Request path:", request.path)
+print("Request operation:", request.operation)
+
+is_accessing_sys_health_only = rule {
+    request.operation is "read" and
+    strings.has_prefix(request.path, "sys/health")  
+}
+
+restricted_users = rule {
+    sockaddr.is_contained(request.connection.remote_addr, "127.0.0.1/32")
+}
+
+main = rule when restricted_users {
+   is_accessing_sys_health_only
+}
+
+
