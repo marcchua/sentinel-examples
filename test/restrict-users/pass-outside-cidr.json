@@ -1,0 +1,16 @@
+{
+    "global": {
+      "request": {
+        "connection": {
+          "remote_addr": "168.0.0.1"
+        },
+        "unauthenticated": "true",
+        "operation": "read",
+        "path": "sys/seal"
+      }
+    },
+    "test": {
+      "restricted_users": false
+    }
+}
+

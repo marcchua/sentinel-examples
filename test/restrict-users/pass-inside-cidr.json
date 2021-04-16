@@ -1,0 +1,16 @@
+{
+    "global": {
+      "request": {
+        "connection": {
+          "remote_addr": "127.0.0.1"
+        },
+        "unauthenticated": "true",
+        "operation": "read",
+        "path": "sys/health"
+      }
+    },
+    "test": {
+      "restricted_users": true,
+      "main": true
+    }
+}
