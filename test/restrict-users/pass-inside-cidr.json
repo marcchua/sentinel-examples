@@ -8,5 +8,9 @@
         "operation": "read",
         "path": "sys/health"
       }
+    },
+    "test": {
+      "restricted_users": true,
+      "main": true
     }
-  }
+}
